@@ -44,7 +44,7 @@ Predictive-Maintenance-Linear-Regression/
 - **data/** contains the historical sensor dataset used for training.
 - **logs/** contains the Alert and Error events detected by the system.
 - **database_manager.py** manages the PostgreSQL database connection, tables, inserts, and queries.
-- **screenshots/** contains the regression, residual, and predictive maintenance event visualizations used in this README.ables, inserts, and queries.
+- **screenshots/** contains the regression, residual, and predictive maintenance event visualizations used in this README.
 - **load_training_data.py** cleans the historical CSV data and stores it in PostgreSQL.
 - **predictive_maintenance.ipynb** contains the regression analysis, residual analysis, threshold discovery, synthetic streaming simulation, event detection, and visualization.
 - **requirements.txt** lists the Python packages required to run the project.
@@ -142,7 +142,7 @@ Synthetic sensor readings are generated to test the predictive maintenance syste
 
 For each axis, the mean and standard deviation from the historical training data are used to generate synthetic readings with similar statistical characteristics.
 
-A `StandardScaler` is fitted using the historical training data and applied to the synthetic data. This demonstrates that the test data is standardized using information learned from the training dataset.
+A StandardScaler is fitted using the historical training data and applied to the synthetic test data. The regression models, residuals, and thresholds remain in the original current units so that MinC and MaxC can be compared directly with the residual values.
 
 Known sustained anomalies are added to Axis #1 to verify that the Alert and Error detection logic works correctly.
 
